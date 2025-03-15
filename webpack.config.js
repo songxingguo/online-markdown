@@ -13,7 +13,9 @@ module.exports = {
     //入口文件输出配置
     output: {
         path: path.resolve(__dirname, 'docs/js/'),
-        filename: '[name].js'
+        filename: '[name].js',
+        library: 'MarkdownConverter',  // 新增
+        libraryTarget: 'umd',          // 新增
     },
     module: {
         //加载器配置

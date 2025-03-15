@@ -33,6 +33,9 @@ var converter =  new showdown.Converter({
   extensions: ['prettify', 'tasklist', 'footnote'],
   tables: true
 });
+
+module.exports = converter;
+
 /**
  * [OnlineMarkdown description]
  * @type {Object}

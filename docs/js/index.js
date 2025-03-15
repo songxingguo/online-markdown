@@ -1,4 +1,14 @@
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["MarkdownConverter"] = factory();
+	else
+		root["MarkdownConverter"] = factory();
+})(this, function() {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -15107,6 +15117,9 @@ var converter =  new showdown.Converter({
   extensions: ['prettify', 'tasklist', 'footnote'],
   tables: true
 });
+
+module.exports = converter;
+
 /**
  * [OnlineMarkdown description]
  * @type {Object}
@@ -15174,7 +15187,8 @@ var OnlineMarkdown = {
     $('#outputCtt li').each(function() {
       $(this).html('<span><span>' + $(this).html() + '</span></span>');
     });
-  }
+  },
+  converter: converter
 };
 
 OnlineMarkdown.init();
@@ -15446,3 +15460,4 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACd
 
 /***/ })
 /******/ ]);
+});
